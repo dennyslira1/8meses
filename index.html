@@ -1,181 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-    
-    /twomade-clone  
-  /css  
-    style.css  
-  /js  
-    script.js  
-  index.html  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Por onde for, quero ser seu par ❤️</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #ffcccb, #ffe6e6);
-            text-align: center;
-            color: #333;
-        }
-        .marquee {
-            background-color: #ff4d6d;
-            color: white;
-            font-size: 1.2rem;
-            padding: 10px 0;
-            overflow: hidden;
-        }
-        .marquee span {
-            display: inline-block;
-            animation: scroll 10s linear infinite;
-        }
-        @keyframes scroll {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #ff4d6d;
-        }
-        h2 {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            color: #333;
-        }
-        iframe {
-            margin: 20px auto;
-            border: none;
-            border-radius: 10px;
-            width: 80%;
-            height: 315px;
-        }
-        .slideshow {
-            position: relative;
-            max-width: 600px;
-            margin: 30px auto;
-        }
-        .slides {
-            display: none;
-            border-radius: 10px;
-        }
-        .counter {
-            margin: 30px auto;
-            font-size: 1.5rem;
-        }
-    </style>
+    <title>Twomade Clone</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Barra de rolagem -->
-    <div class="marquee">
-        <span>Por onde for, quero ser seu Par! ❤️</span>
-    </div>
 
-    <!-- Mensagem -->
-    <h1>Eu te amo, minha linda!</h1>
-    <p>Se eu pudesse voltar no tempo, faria tudo de novo pro meu caminho cruzar com o seu!</p>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Twomade Clone</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Player de Música -->
-<div class="audio-player">
-    <h2>Tantos Mares - Pedro Valença</h2>
-    <audio controls>
-        <source src="https://raw.githubusercontent.com/dennyslira1/surpresa/refs/heads/main/Manu%20Chao%20-%20Me%20Gustas%20Tu.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-</div>
+    <!-- Música de Fundo -->
+    <section class="music">
+        <audio id="background-music" loop>
+            <source src="audio/musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+        <button id="toggle-music">🔊 Ligar Música</button>
+    </section>
 
-<style>
-    .audio-player {
-        margin: 20px auto;
-        text-align: center;
-        font-size: 1.2rem;
-        color: #ff4d6d;
-    }
-
-    audio {
-        width: 80%;
-        max-width: 600px;
-        margin-top: 10px;
-        border-radius: 10px;
-        outline: none;
-    }
-</style>
-    <!-- Contador regressivo -->
-    <h2>O dia mais feliz da nossa vida, ta chegando!</h2>
-    <div class="counter" id="counter"></div>
-
-    <!-- Slideshow de fotos -->
-    <div class="slideshow">
-        <img class="slides" src="IMG_0181.jpeg" alt="Foto 1" style="width:100%">
-        <img class="slides" src="IMG_1366.jpeg" alt="Foto 2" style="width:100%">
-        <img class="slides" src="IMG_1247.jpeg" alt="Foto 3" style="width:100%">
-    </div>
-    
+    <!-- Quiz -->
     <section class="quiz">
-    <h2>Quiz Interativo</h2>
-    <div id="quiz-container">
-        <p id="question">Quem é o amor da minha vida?</p>
-        <div id="options"></div>
-        <p id="feedback"></p>
-    </div>
-</section><section class="roleta">
-    <h2>Gire a Roleta, para saber qual é o cardapio de hoje</h2>
-    <div class="wheel-container">
-        <div id="wheel" class="wheel"></div>
-        <button id="spin-btn">Girar</button>
-        <p id="result"></p>
-    </div>
-</section>
+        <h2>Quiz Interativo</h2>
+        <div id="quiz-container">
+            <p id="question">Pergunta aparece aqui</p>
+            <div id="options"></div>
+            <p id="feedback"></p>
+        </div>
+    </section>
 
-    <script>
-        // Contador regressivo
-        const targetDate = new Date('2026-07-25T17:00:00'); // Alterar para a data desejada
-        const counterElement = document.getElementById('counter');
+    <!-- Roleta Giratória -->
+    <section class="roleta">
+        <h2>Gire a Roleta</h2>
+        <div class="wheel-container">
+            <div id="wheel" class="wheel"></div>
+            <button id="spin-btn">Girar</button>
+            <p id="result"></p>
+        </div>
+    </section>
 
-        function updateCounter() {
-            const now = new Date();
-            const diff = targetDate - now;
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Twomade Clone. Todos os direitos reservados.</p>
+    </footer>
 
-            if (diff <= 0) {
-                counterElement.innerHTML = "Chegou o grande dia! 🎉";
-                clearInterval(interval);
-                return;
-            }
+    <!-- Link do JavaScript -->
+    <script src="js/script.js"></script>
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            counterElement.innerHTML = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
-        }
-
-        const interval = setInterval(updateCounter, 1000);
-        updateCounter();
-
-        // Slideshow de fotos
-        let slideIndex = 0;
-
-        function showSlides() {
-            const slides = document.getElementsByClassName('slides');
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = 'block';
-            setTimeout(showSlides, 3000); // Troca a cada 3 segundos
-        }
-
-        showSlides();
-    </script>
 </body>
 </html>
