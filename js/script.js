@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             question: "Qual ano a gente deu o primeiro beijo?",
-            options: ["2013", "2024", "2020", "2023"],
-            correct: 1
+            options: ["2024", "2013", "2020", "2023"],
+            correct: 2
         }
     ];
 
