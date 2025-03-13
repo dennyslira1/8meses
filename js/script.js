@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Quiz Interativo
     const quizData = [
         {
-            question: "Qual é a capital da França?",
-            options: ["Londres", "Berlim", "Paris", "Roma"],
-            correct: 2
+            question: "Quem é o amor da minha vida?",
+            options: ["SPFC", "Neymar", "Futebol", "Ester ❤️"],
+            correct: 4
         },
         {
-            question: "Quanto é 5 + 3?",
-            options: ["5", "8", "12", "15"],
+            question: "Qual ano a gente deu o primeiro beijo?",
+            options: ["2013", "2024", "2020", "2023"],
             correct: 1
         }
     ];
