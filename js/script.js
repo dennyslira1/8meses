@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             let finalDegree = randomDegree % 360;
             let sector = Math.floor(finalDegree / 60);
-            const outcomes = ["Vermelho", "Amarelo", "Azul", "Verde", "Laranja", "Roxo"];
+            const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarao", "Churrasco"];
             resultText.textContent = `Você caiu em: ${outcomes[sector]}`;
             isSpinning = false;
         }, 4000);
