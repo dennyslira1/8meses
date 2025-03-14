@@ -3,100 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Por onde for, quero ser seu par! Feliz 8 meses</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Meu Site Romântico</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Link do JavaScript -->
-    <script src="js/script.js"></script>
-    <!-- Cabeçalho -->
     <header>
-        <h1>Feliz 8 Meses, Amo você ❤️</h1>
-        <nav>
-            <ul>
-                
-            </ul>
-        </nav>
+        <div class="rotating-bar">
+            <span>Por onde for, quero ser seu par <3</span>
+        </div>
     </header>
 
-    <!-- Música de Fundo -->
-    <section class="music">
-        <audio id="background-music" loop>
-            <source src="audio/musica.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-        <button id="toggle-music">🔊 Ligar Música</button>
-    </section>
-
-    <!-- Quiz -->
-    <section class="quiz">
-        <h2>Quiz Interativo</h2>
-        <div id="quiz-container">
-            <p id="question">Pergunta aparece aqui</p>
-            <div id="options"></div>
-            <p id="feedback"></p>
+    <div class="slideshow-container">
         </div>
-    </section>
 
-      <title>Roleta Giratória</title>
-    <style>
-        #wheel {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            position: relative;
-            transition: transform 4s ease-out;
-        }
-        .
-        .sector {
-            position: absolute;
-            width: 150px;
-            height: 300px;
-            transform-origin: 0 150px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        
-        #spin-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-        }
-        
-        #result {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-    </style>
-</head>
-<body>
-    <div id="wheel">
-        <div class="sector" style="transform: rotate(0deg);">Japa</div>
-        <div class="sector" style="transform: rotate(60deg);">Massa</div>
-        <div class="sector" style="transform: rotate(120deg);">Hamburguer</div>
-        <div class="sector" style="transform: rotate(180deg);">Dogâo</div>
-        <div class="sector" style="transform: rotate(240deg);">Camarao</div>
-        <div class="sector" style="transform: rotate(300deg);">Churrasco</div>
-    </div>
-    <button id="spin-btn">Girar</button>
-    <div id="result"></div>
+    <div class="music-player">
+        </div>
 
-  
+    <div class="quiz-container">
+        </div>
+
+    <div class="roulette-container">
+        </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-  <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 - Amo você. Todos os direitos reservados.</p>
-    </footer>
-
-    
-
-
