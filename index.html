@@ -38,19 +38,61 @@
         </div>
     </section>
 
-    <!-- Roleta Giratória -->
-    <section class="roleta">
-        <h2>Gire a Roleta</h2>
-        <div class="wheel-container">
-            <div id="wheel" class="wheel"></div>
-            <button id="spin-btn">Girar</button>
-            <p id="result"></p>
-        </div>
-    </section>
+      <title>Roleta Giratória</title>
+    <style>
+        #wheel {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 4s ease-out;
+        }
+        .
+        .sector {
+            position: absolute;
+            width: 150px;
+            height: 300px;
+            transform-origin: 0 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        #spin-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="wheel">
+        <div class="sector" style="transform: rotate(0deg);">Japa</div>
+        <div class="sector" style="transform: rotate(60deg);">Massa</div>
+        <div class="sector" style="transform: rotate(120deg);">Hamburguer</div>
+        <div class="sector" style="transform: rotate(180deg);">Dogao</div>
+        <div class="sector" style="transform: rotate(240deg);">Camarao</div>
+        <div class="sector" style="transform: rotate(300deg);">Churrasco</div>
+    </div>
+    <button id="spin-btn">Girar</button>
+    <div id="result"></div>
+
+    <script>
+        // Seu código JavaScript aqui
+    </script>
+</body>
+</html>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2025 Twomade Clone. Todos os direitos reservados.</p>
+        <p>&copy; 2025 - Amo você. Todos os direitos reservados.</p>
     </footer>
 
     
