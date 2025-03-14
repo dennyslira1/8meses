@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             question: "Quem é o amor da minha vida?",
             options: ["SPFC", "Neymar", "Futebol", "Ester ❤️"],
-            correct: 4
+            correct: 3
         },
         {
             question: "Qual ano a gente deu o primeiro beijo?",
             options: ["2024", "2013", "2020", "2023"],
-            correct: 2
+            correct: 1
         }
     ];
 
@@ -47,25 +47,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loadQuestion();
 
-    // Roleta Giratória
+document.addEventListener("DOMContentLoaded", function() {
     const wheel = document.getElementById("wheel");
     const spinBtn = document.getElementById("spin-btn");
     const resultText = document.getElementById("result");
     let isSpinning = false;
+    const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarao", "Churrasco"];
 
     spinBtn.addEventListener("click", function() {
         if (isSpinning) return;
         isSpinning = true;
-        let randomDegree = Math.floor(3600 + Math.random() * 360);
+
+        // Resultado pré-definido (exemplo: "Hamburguer")
+        const predefinedResult = "Hamburguer";
+        const predefinedIndex = outcomes.indexOf(predefinedResult);
+        const finalDegree = predefinedIndex * 60; // Calcula o grau final
+
+        let randomDegree = 3600 + finalDegree; // Adiciona rotações completas
+
         wheel.style.transform = `rotate(${randomDegree}deg)`;
 
         setTimeout(() => {
-            let finalDegree = randomDegree % 360;
-            let sector = Math.floor(finalDegree / 60);
-            const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarao", "Churrasco"];
-            resultText.textContent = `Você caiu em: ${outcomes[sector]}`;
+            resultText.textContent = `Você caiu em: ${predefinedResult}`;
             isSpinning = false;
         }, 4000);
+    });
+});
     });
 });
 
