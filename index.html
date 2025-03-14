@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Romântico</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Twomade Clone</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Cabeçalho -->
     <header>
-        <div class="rotating-bar">
-            <span>Por onde for, quero ser seu par <3</span>
-        </div>
+        <h1>Twomade Clone</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="slideshow-container">
-        </div>
+    <!-- Música de Fundo -->
+    <section class="music">
+        <audio id="background-music" loop>
+            <source src="audio/musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+        <button id="toggle-music">🔊 Ligar Música</button>
+    </section>
 
-    <div class="music-player">
+    <!-- Quiz -->
+    <section class="quiz">
+        <h2>Quiz Interativo</h2>
+        <div id="quiz-container">
+            <p id="question">Pergunta aparece aqui</p>
+            <div id="options"></div>
+            <p id="feedback"></p>
         </div>
+    </section>
 
-    <div class="quiz-container">
+    <!-- Roleta Giratória -->
+    <section class="roleta">
+        <h2>Gire a Roleta</h2>
+        <div class="wheel-container">
+            <div id="wheel" class="wheel"></div>
+            <button id="spin-btn">Girar</button>
+            <p id="result"></p>
         </div>
+    </section>
 
-    <div class="roulette-container">
-        </div>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Twomade Clone. Todos os direitos reservados.</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <!-- Link do JavaScript -->
+    <script src="js/script.js"></script>
+
 </body>
 </html>
