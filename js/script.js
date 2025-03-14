@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             question: "Qual ano a gente deu o primeiro beijo?",
             options: ["2024", "2013", "2020", "2023"],
-            correct: 1
+            correct: 2
         }
     ];
 
@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function checkAnswer(selected) {
         if (selected === quizData[currentQuestion].correct) {
-            feedbackElement.textContent = "Correto!";
+            feedbackElement.textContent = "Parabéns, acertou gatinha!";
             feedbackElement.style.color = "green";
         } else {
-            feedbackElement.textContent = "Errado!";
+            feedbackElement.textContent = "Moiô, bb! Vai ter que me pagar o pedágio";
             feedbackElement.style.color = "red";
         }
         setTimeout(() => {
@@ -52,14 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const spinBtn = document.getElementById("spin-btn");
     const resultText = document.getElementById("result");
     let isSpinning = false;
-    const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarao", "Churrasco"];
+    const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarão", "Churrasco"];
 
     spinBtn.addEventListener("click", function() {
         if (isSpinning) return;
         isSpinning = true;
 
         // Resultado pré-definido (exemplo: "Hamburguer")
-        const predefinedResult = "Hamburguer";
+        const predefinedResult = "Massa";
         const predefinedIndex = outcomes.indexOf(predefinedResult);
         const finalDegree = predefinedIndex * 60; // Calcula o grau final
 
