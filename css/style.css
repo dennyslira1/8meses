@@ -1,152 +1,63 @@
-/* Reset de Estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Corpo da Página */
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 20px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1; /* Tom de rosa claro */
 }
 
-/* Cabeçalho */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+/* Estilos para cabeçalho, slideshow e player de música (como antes) */
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Seção da Música */
-.music {
-    margin: 20px 0;
-}
-
-#toggle-music {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#toggle-music:hover {
-    background-color: #e68900;
-}
-
-/* Seção do Quiz */
-.quiz {
-    background-color: white;
-    padding: 20px;
+.quiz-container, .roulette-container {
+    max-width: 600px;
     margin: 20px auto;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#quiz-container {
-    margin-top: 10px;
+.quiz-question {
+    margin-bottom: 20px;
 }
 
-#options button {
+.quiz-options label {
     display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    background-color: #2196F3;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-#options button:hover {
-    background-color: #0b7dda;
-}
-
-#feedback {
+.quiz-result {
+    margin-top: 20px;
     font-weight: bold;
-    margin-top: 10px;
+    color: #ff0000; /* Vermelho */
 }
 
-/* Seção da Roleta */
-.roleta {
-    margin: 30px auto;
-}
-
-.wheel-container {
-    position: relative;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-.wheel {
-    width: 100%;
-    height: 100%;
-    background: conic-gradient(
-        #ff0000 0deg 60deg,
-        #ff9900 60deg 120deg,
-        #33cc33 120deg 180deg,
-        #3399ff 180deg 240deg,
-        #9900cc 240deg 300deg,
-        #ff0099 300deg 360deg
-    );
+#wheel {
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    transition: transform 3s ease-out;
+    position: relative;
+    transition: transform 4s ease-out;
+    margin: 20px auto;
+    border: 5px solid #ff69b4; /* Rosa forte */
+}
+
+.sector {
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    transform-origin: 0 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff69b4;
 }
 
 #spin-btn {
-    margin-top: 20px;
+    background-color: #ff69b4;
+    color: white;
     padding: 10px 20px;
-    font-size: 18px;
     border: none;
-    background-color: #ff5722;
-    color: white;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
 }
-
-#spin-btn:hover {
-    background-color: #e64a19;
-}
-
-#result {
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-/* Rodapé */
-footer {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
