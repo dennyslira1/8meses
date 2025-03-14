@@ -1,78 +1,65 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Quiz Interativo
-    const quizData = [
-        {
-            question: "Quem é o amor da minha vida?",
-            options: ["SPFC", "Neymar", "Futebol", "Ester ❤️"],
-            correct: 3
-        },
-        {
-            question: "Qual ano a gente deu o primeiro beijo?",
-            options: ["2024", "2013", "2020", "2023"],
-            correct: 2
-        }
-    ];
+// Slideshow e player de música (como antes)
 
-    let currentQuestion = 0;
-    const questionElement = document.getElementById("question");
-    const optionsElement = document.getElementById("options");
-    const feedbackElement = document.getElementById("feedback");
-
-    function loadQuestion() {
-        let q = quizData[currentQuestion];
-        questionElement.textContent = q.question;
-        optionsElement.innerHTML = "";
-        q.options.forEach((option, index) => {
-            let button = document.createElement("button");
-            button.textContent = option;
-            button.onclick = () => checkAnswer(index);
-            optionsElement.appendChild(button);
-        });
+// Quiz
+const quizData = [
+    {
+        question: "Qual é a cor do amor?",
+        options: ["Azul", "Vermelho", "Verde"],
+        answer: "Vermelho"
+    },
+    {
+        question: "Qual é a flor mais romântica?",
+        options: ["Rosa", "Tulipa", "Girassol"],
+        answer: "Rosa"
+    },
+    {
+        question: "Qual é o melhor lugar para um encontro romântico?",
+        options: ["Cinema", "Parque", "Restaurante"],
+        answer: "Parque"
     }
+];
 
-    function checkAnswer(selected) {
-        if (selected === quizData[currentQuestion].correct) {
-            feedbackElement.textContent = "Parabéns, acertou gatinha!";
-            feedbackElement.style.color = "green";
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    const question = quizData[currentQuestion];
+    document.querySelector(".quiz-question").textContent = question.question;
+    const options = document.querySelector(".quiz-options");
+    options.innerHTML = "";
+    question.options.forEach((option, index) => {
+        options.innerHTML += `<label><input type="radio" name="answer" value="${option}">${option}</label>`;
+    });
+}
+
+function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+        if (selectedAnswer.value === quizData[currentQuestion].answer) {
+            score++;
+            document.querySelector(".quiz-result").textContent = "Resposta correta!";
         } else {
-            feedbackElement.textContent = "Moiô, bb! Vai ter que me pagar o pedágio";
-            feedbackElement.style.color = "red";
+            document.querySelector(".quiz-result").textContent = "Resposta incorreta.";
         }
-        setTimeout(() => {
-            currentQuestion = (currentQuestion + 1) % quizData.length;
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
             loadQuestion();
-            feedbackElement.textContent = "";
-        }, 1000);
+        } else {
+            document.querySelector(".quiz-container").innerHTML = `Quiz finalizado! Pontuação: ${score}/${quizData.length}`;
+        }
     }
+}
 
-    loadQuestion();
+// Roleta
+const outcomes = ["Paris", "Roma", "Veneza", "Florença", "Santorini"];
 
+function spinRoulette() {
+    // Lógica da roleta aqui
+}
+
+// Inicialização
 document.addEventListener("DOMContentLoaded", function() {
-    const wheel = document.getElementById("wheel");
-    const spinBtn = document.getElementById("spin-btn");
-    const resultText = document.getElementById("result");
-    let isSpinning = false;
-    const outcomes = ["Japa", "Massa", "Hamburguer", "Dogao", "Camarão", "Churrasco"];
-
-    spinBtn.addEventListener("click", function() {
-        if (isSpinning) return;
-        isSpinning = true;
-
-        // Resultado pré-definido (exemplo: "Hamburguer")
-        const predefinedResult = "Massa";
-        const predefinedIndex = outcomes.indexOf(predefinedResult);
-        const finalDegree = predefinedIndex * 60; // Calcula o grau final
-
-        let randomDegree = 3600 + finalDegree; // Adiciona rotações completas
-
-        wheel.style.transform = `rotate(${randomDegree}deg)`;
-
-        setTimeout(() => {
-            resultText.textContent = `Você caiu em: ${predefinedResult}`;
-            isSpinning = false;
-        }, 4000);
-    });
+    // Slideshow e player de música (como antes)
+    loadQuestion();
+    document.getElementById("spin-btn").addEventListener("click", spinRoulette);
 });
-    });
-});
-
